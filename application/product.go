@@ -19,6 +19,7 @@ type ProductInterface interface {
 	GetName() string
 	GetStatus() string
 	GetPrice() float64
+	GetQuantity() int
 }
 
 type ProductServiceInterface interface {
@@ -119,4 +120,8 @@ func (p *Product) GetStatus() string {
 
 func (p *Product) GetPrice() float64 {
 	return p.Price
+}
+
+func (p *Product) GetQuantity() int {
+	return p.Quantity
 }

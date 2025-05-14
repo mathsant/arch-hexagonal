@@ -1,0 +1,7 @@
+- Comandos
+  - Gerar mocks: mockgen -destination=application/mocks/application.go -source=application/product.go application
+- CLI:
+  - create: go run main.go cli -a=create -n="Product CLI" -p=25.0 -q=2
+  - get: go run main.go cli -a=get --id=cada061f-2f5d-4388-9ad3-121b1f9c62f7
+  - enable: go run main.go cli -a=enable --id=cada061f-2f5d-4388-9ad3-121b1f9c62f7
+  - disable: go run main.go cli -a=disable --id=cada061f-2f5d-4388-9ad3-121b1f9c62f7
