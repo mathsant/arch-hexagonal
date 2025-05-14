@@ -20,6 +20,7 @@ type ProductInterface interface {
 	GetStatus() string
 	GetPrice() float64
 	GetQuantity() int
+	ChangePrice(price float64) error
 }
 
 type ProductServiceInterface interface {
@@ -124,4 +125,18 @@ func (p *Product) GetPrice() float64 {
 
 func (p *Product) GetQuantity() int {
 	return p.Quantity
+}
+
+func (p *Product) ChangePrice(price float64) error {
+	if price < 0 {
+		return errors.New("price only accept positive numbers")
+	}
+
+	p.Price = price
+	_, err := p.IsValid()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
